@@ -32,15 +32,44 @@ class App extends Component {
   }
 
   showContent = (index, item) => {
-    const data = {
+    var year = ['year'];
+    var fires = ['fires'];
+    var deaths = ['deaths'];
+    var affected = ['affected']
+    for (var v in item.info) {
+      var myVar = item.info[v];
+      year.push(Number(myVar.year));
+      fires.push(Number(myVar.eventCount));
+      deaths.push(Number(myVar.totalDeaths));
+      affected.push(Number(myVar.totalAffected));
+    }
+    var data = {
+      xs: {
+        fires: 'year',
+        deaths: 'year',
+        affected: 'year',
+      },
       columns: [
-        ['data1', 30, 200, 100, 400, 150, 250],
-        ['data2', 50, 20, 10, 40, 15, 25]
-      ]
-    };
-    this.setState((prevState, props)=>{
-      return{
-        content: <C3Chart data={data} />
+        fires, year, deaths, affected
+      ],
+      type: 'scatter'
+    }
+    var axis = {
+      x: {
+        label: 'Sepal.Width',
+        tick: {
+          fit: false
+        }
+      },
+      y: {
+        label: 'Petal.Width'
+      }
+
+    }
+    this.setState((prevState, props) => {
+      return {
+        content: <C3Chart data={data} />,
+        currentDisaster: index
       }
     });
   }
@@ -52,7 +81,7 @@ class App extends Component {
         <div id='leftMenu' style={this.state.styles.leftMenu}>
           {
             Data.map((item, i) => {
-              return <Disaster index={i} key={i} item={item} onClick={this.showContent}/>
+              return <Disaster index={i} key={i} item={item} onClick={this.showContent} current={this.state.currentDisaster == i ? true : false} />
             })
           }
         </div>

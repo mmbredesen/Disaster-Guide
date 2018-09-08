@@ -22,7 +22,7 @@ class Disaster extends Component {
         style={{
           height: '30px',
           color: this.state.hovered ? 'white' : 'black',
-          backgroundColor: this.state.hovered ? '#555' : (null),
+          backgroundColor: this.state.hovered ? '#555' : (this.props.current? '#00a7fc' : null),
           textAlign: 'center',
           fontSize: '26px',
           display: 'block'
@@ -31,7 +31,8 @@ class Disaster extends Component {
         onMouseEnter={this.toggleHover}
         onMouseLeave={this.toggleHover}
       >
-        {this.props.item.name}
+        {this.props.item.title}
+
       </div>
     );
   }
