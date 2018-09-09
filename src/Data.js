@@ -2,9 +2,9 @@ const Data = [
   {
     title: 'Fire',
     gif: 'https://giphy.com/embed/nrXif9YExO9EI',
-    header: 'this is a header',
-    intro: 'this is an intro',
-    description: 'this is a description',
+    header: 'Wildfire Preparation and Relief',
+    intro: 'Millions of acres of land, thousands of homes, and dozens of lives have already been destroyed by wildfires in record-breaking numbers in 2018. As one of the most frequent and disastrous natural hazards the United States is facing, the American people need to be informed about the risk of fires and what we need to do as a nation to protect ourselves and our environment from destruction. We also need to be aware that natural disasters do not affect every population in the same way. History has shown that vulnerable populations such as women, people with disabilities, and low socio-economic status face more deaths and damage unless we account for the prevention and relief these peoples will need in the face of a disaster.',
+    description: '',
     info: [
       {
         "year": "2000",
@@ -113,9 +113,9 @@ const Data = [
   {
     title: 'Hurricanes',
     gif: 'https://giphy.com/embed/26gJzie0DesTkcX4s',
-    header: 'this is a header',
-    intro: 'this is an intro',
-    description: 'this is a description',
+    header: 'Hurricane Preparation and Relief',
+    intro: 'In the wake of the tragedy of 2017 Hurricane Maria on Puerto Rico, the United States sees yet another hurricane, Florence, approaching our shores. These forces of nature will not be slowing anytime soon, and are among the most destructive of all natural hazards. Hurricanes are so destructive because they can dismantle physical infrastructure, cut off electricity, contaminate the water supply, and harm the local ecosystem. Not adequately preparing for these issues can lead to death and disease for long after a hurricane has hit. The United States must evaluate every aspect of our communities to protect against the most damaging of hurricane after-effects, such as contamination of water to hospitals.',
+    description: '',
     info: [
       {
         "year": "2000",
