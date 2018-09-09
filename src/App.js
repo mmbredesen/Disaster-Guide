@@ -57,6 +57,9 @@ class App extends Component {
       }
     });
   }
+  componentDidMount(){
+    this.showContent(0, Data[0]);
+  }
 
 
   render() {
