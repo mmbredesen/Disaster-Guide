@@ -1,6 +1,10 @@
 const Data = [
   {
-    title: 'fire',
+    title: 'Fire',
+    gif: 'https://giphy.com/embed/nrXif9YExO9EI',
+    header: 'this is a header',
+    intro: 'this is an intro',
+    description: 'this is a description',
     info: [
       {
         "year": "2000",
@@ -105,7 +109,24 @@ const Data = [
         "totalDeaths": "32"
       }
     ]
-  }
+  },
+  {
+    title: 'Hurricanes',
+    gif: 'https://giphy.com/embed/26gJzie0DesTkcX4s',
+    header: 'this is a header',
+    intro: 'this is an intro',
+    description: 'this is a description',
+    info: [
+      {
+        "year": "2000",
+        "eventCount": "7",
+        "totalDeaths": "14",
+        "totalAffected": 36087
+      },
+    ]
+  },
+  
+
 ]
 
 export default Data;

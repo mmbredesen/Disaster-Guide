@@ -3,6 +3,7 @@ import Disaster from './Disaster.js'
 import Data from './Data.js'
 import C3Chart from 'react-c3js';
 import 'c3/c3.css';
+import Renderer from './Renderer.js'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,56 +20,39 @@ class App extends Component {
 
         },
         leftMenu: {
-          width: '20%',
+          width: '15%',
           height: '100%',
-          backgroundColor: '#f1f1f1'
+          backgroundColor: '#f1f1ff'
         },
         content: {
-          width: '80%',
+          width: '85%',
           height: '100%',
+          overflow: 'scroll',
         },
       }
     }
   }
 
   showContent = (index, item) => {
-    var year = ['year'];
-    var fires = ['fires'];
-    var deaths = ['deaths'];
-    var affected = ['affected']
-    for (var v in item.info) {
-      var myVar = item.info[v];
-      year.push(Number(myVar.year));
-      fires.push(Number(myVar.eventCount));
-      deaths.push(Number(myVar.totalDeaths));
-      affected.push(Number(myVar.totalAffected));
-    }
-    var data = {
-      xs: {
-        fires: 'year',
-        deaths: 'year',
-        affected: 'year',
-      },
-      columns: [
-        fires, year, deaths, affected
-      ],
-      type: 'scatter'
-    }
-    var axis = {
-      x: {
-        label: 'Sepal.Width',
-        tick: {
-          fit: false
-        }
-      },
-      y: {
-        label: 'Petal.Width'
-      }
-
-    }
+    var renderer = Renderer[index](item);
     this.setState((prevState, props) => {
       return {
-        content: <C3Chart data={data} />,
+        content:
+          <div>
+            <h1>{item.header}</h1>
+            {renderer}
+            <div>
+              {item.intro}
+            </div>
+            <iframe
+              src={item.gif}
+              width="480" height="360" frameBorder="0" class="giphy-embed">
+            </iframe>
+            <div>
+              {item.description}
+            </div>
+
+          </div>,
         currentDisaster: index
       }
     });
